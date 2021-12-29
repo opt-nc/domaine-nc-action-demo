@@ -1,0 +1,31 @@
+name: Example using opt-nc/domaine-nc-action that creates an issue
+
+on:
+  workflow_dispatch:
+    inputs:        
+      domain:
+        description: Domain name without extenstion
+        required: true
+        type: choice
+        default: opt
+        options:
+        - opt
+        - domain
+        - '1012'
+        - ccp
+      daysBeforeExpiration:
+        description: Days before domain expiration that triggers new issue
+        required: true
+        default: '5'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the opt-nc/domaine-nc-action's demo workflow
+        uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@main 
+        id: meta
+        with:
+          rapidapi-key: ${{ secrets.RAPID_API_KEY }}
+          domain: ${{ github.event.inputs.domain }}
+          daysBeforeExpiration: ${{ github.event.inputs.daysBeforeExpiration }}
