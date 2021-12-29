@@ -23,7 +23,6 @@ jobs:
     name: Call the opt-nc/domaine-nc-action's demo workflow
     uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@v1
     with:
-      rapidapi-key: ${{ secrets.RAPID_API_KEY }}
       domain: ${{ github.event.inputs.domain }}
       daysBeforeExpiration: ${{ github.event.inputs.daysBeforeExpiration }}
     secrets:
