@@ -26,4 +26,4 @@ jobs:
       domain: ${{ github.event.inputs.domain }}
       daysBeforeExpiration: ${{ github.event.inputs.daysBeforeExpiration }}
     secrets:
-      rapidapi-key: ${{ secrets.RAPID_API_KEY }}
+      rapidapi_key: ${{ secrets.RAPID_API_KEY }}
