@@ -20,12 +20,11 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call the opt-nc/domaine-nc-action's demo workflow
-        uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@main 
-        id: meta
-        with:
-          rapidapi-key: ${{ secrets.RAPID_API_KEY }}
-          domain: ${{ github.event.inputs.domain }}
-          daysBeforeExpiration: ${{ github.event.inputs.daysBeforeExpiration }}
+    name: Call the opt-nc/domaine-nc-action's demo workflow
+    uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@main 
+    with:
+      rapidapi-key: ${{ secrets.RAPID_API_KEY }}
+      domain: ${{ github.event.inputs.domain }}
+      daysBeforeExpiration: ${{ github.event.inputs.daysBeforeExpiration }}
+    secrets:
+      rapidapi-key: ${{ secrets.RAPID_API_KEY }}
