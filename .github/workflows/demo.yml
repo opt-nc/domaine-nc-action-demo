@@ -21,7 +21,7 @@ on:
 jobs:
   check:
     name: Call the opt-nc/domaine-nc-action's demo workflow
-    uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@main 
+    uses: opt-nc/domaine-nc-action/.github/workflows/demo.yml@v& 
     with:
       rapidapi-key: ${{ secrets.RAPID_API_KEY }}
       domain: ${{ github.event.inputs.domain }}
